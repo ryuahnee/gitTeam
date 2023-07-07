@@ -3,6 +3,7 @@ package jdbc;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
@@ -15,10 +16,11 @@ public class JdbcUtil {
 	static {
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("드라이버로딩성공");
 			
-			InitialContext ctx = new InitialContext(); 		//import javax.naming.InitialContext;
+			Context ctx = new InitialContext(); 		//import javax.naming.InitialContext;
+			System.out.println("Context성공");
 			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/mySql");
 			System.out.println("Connetion pool생성! ");
 		} catch (ClassNotFoundException e) {

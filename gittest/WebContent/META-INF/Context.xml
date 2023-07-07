@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
 	<Resource
-		name="jdbc/mySql"
+		name="jdbc/TestDB"
 		auth="Container"
-		driverClass="com.mysql.jdbc.Driver"
+		driverClass="com.mysql.cj.jdbc.Driver"
 		type="javax.sql.DataSource"
 		url = "jdbc:mysql://localhost:3306/sys?useSSL=false"
 		username="root"
 		password="1234"
-		maxTotal="20"
+		maxTotal="50"
 		maxIdle="10"
 		maxWaitMillis="10000"
 		/>
